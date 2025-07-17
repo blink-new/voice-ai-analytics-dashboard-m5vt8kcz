@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Bauhaus Color Palette - Primary Colors with Black/White Base */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 0 0% 0%; /* Black text */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 0 0% 0%; /* Black text on cards */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 100% 50%; /* Pure Red */
+    --primary-foreground: 0 0% 100%; /* White text on red */
+    --secondary: 240 100% 50%; /* Pure Blue */
+    --secondary-foreground: 0 0% 100%; /* White text on blue */
+    --muted: 0 0% 95%; /* Light gray */
+    --muted-foreground: 0 0% 40%; /* Dark gray */
+    --accent: 60 100% 50%; /* Pure Yellow */
+    --accent-foreground: 0 0% 0%; /* Black text on yellow */
+    --destructive: 0 100% 50%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%; /* Light gray borders */
+    --input: 0 0% 95%; /* Light gray inputs */
+    --ring: 0 100% 50%; /* Red focus ring */
+    --chart-1: 0 100% 50%; /* Red */
+    --chart-2: 240 100% 50%; /* Blue */
+    --chart-3: 60 100% 50%; /* Yellow */
+    --chart-4: 0 0% 0%; /* Black */
+    --chart-5: 0 0% 60%; /* Gray */
+    --radius: 0rem; /* No border radius for geometric shapes */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 0 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    /* Clean white background - no gradients in Bauhaus */
+    background: #fff;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Bauhaus Geometric Shapes */
+  .bauhaus-square {
+    @apply border-2 border-black bg-white;
+
+    /* Perfect square with sharp corners */
+  }
+  
+  .bauhaus-circle {
+    @apply border-2 border-black bg-white rounded-full;
+
+    /* Perfect circle */
+  }
+  
+  .bauhaus-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  .bauhaus-triangle-up {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #000;
+  }
+  
+  .bauhaus-triangle-right {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 35px solid #000;
+  }
+  
+  /* Bauhaus Grid System */
+  .bauhaus-grid {
+    @apply grid gap-4;
+
+    /* Clean grid with consistent spacing */
+  }
+  
+  /* Bauhaus Cards - Geometric and Functional */
+  .bauhaus-card {
+    @apply bg-white border-2 border-black p-6;
+
+    /* Sharp rectangular cards with black borders */
+  }
+  
+  .bauhaus-card-red {
+    @apply bg-red-500 border-2 border-black text-white;
+  }
+  
+  .bauhaus-card-blue {
+    @apply bg-blue-500 border-2 border-black text-white;
+  }
+  
+  .bauhaus-card-yellow {
+    @apply bg-yellow-500 border-2 border-black text-black;
+  }
+  
+  /* Bauhaus Buttons - Geometric and Functional */
+  .bauhaus-button {
+    @apply bg-white border-2 border-black px-6 py-3 font-medium text-black transition-all duration-200;
+
+    /* No rounded corners - pure geometric form */
+  }
+  
+  .bauhaus-button:hover {
+    @apply bg-black text-white;
+  }
+  
+  .bauhaus-button-red {
+    @apply bg-red-500 border-2 border-black text-white;
+  }
+  
+  .bauhaus-button-red:hover {
+    @apply bg-red-600;
+  }
+  
+  .bauhaus-button-blue {
+    @apply bg-blue-500 border-2 border-black text-white;
+  }
+  
+  .bauhaus-button-blue:hover {
+    @apply bg-blue-600;
+  }
+  
+  .bauhaus-button-yellow {
+    @apply bg-yellow-500 border-2 border-black text-black;
+  }
+  
+  .bauhaus-button-yellow:hover {
+    @apply bg-yellow-600;
+  }
+  
+  /* Bauhaus Typography */
+  .bauhaus-heading {
+    @apply font-bold text-black leading-tight;
+
+    /* Clean, geometric sans-serif typography */
+  }
+  
+  .bauhaus-text {
+    @apply text-black leading-relaxed;
+
+    /* Functional, readable text */
+  }
+  
+  /* Bauhaus Patterns */
+  .bauhaus-pattern-squares {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 20px,
+        #000 20px,
+        #000 22px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        #000 20px,
+        #000 22px
+      );
+  }
+  
+  .bauhaus-pattern-diagonal {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 20px
+    );
+  }
+  
+  /* Bauhaus Status Indicators */
+  .bauhaus-status-positive {
+    @apply bg-green-500 border-2 border-black;
+  }
+  
+  .bauhaus-status-neutral {
+    @apply bg-yellow-500 border-2 border-black;
+  }
+  
+  .bauhaus-status-negative {
+    @apply bg-red-500 border-2 border-black;
+  }
+  
+  /* Bauhaus Progress Indicators */
+  .bauhaus-progress {
+    @apply bg-gray-200 border-2 border-black;
+  }
+  
+  .bauhaus-progress-fill {
+    @apply bg-red-500 h-full transition-all duration-300;
+  }
+  
+  /* Bauhaus Hover Effects */
+  .bauhaus-hover {
+    @apply transition-all duration-200 hover:shadow-lg;
+  }
+  
+  .bauhaus-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #000;
+  }
+  
+  /* Remove all glass and neuromorphism effects */
+  .glass,
+  .glass-hover,
+  .neuromorphism,
+  .neuromorphism-inset,
+  .gradient-text,
+  .animate-glow {
+    /* Reset to clean Bauhaus styles */
+    @apply bg-white border-2 border-black;
+
+    background: #fff !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    background-clip: unset !important;
+    color: #000 !important;
+    animation: none !important;
+  }
+}
